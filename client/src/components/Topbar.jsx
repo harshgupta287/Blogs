@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MdLogin } from "react-icons/md";
 import { Button } from "./ui/button";
 import SearchBox from "./SearchBox";
+import { RouteSignIn } from "@/helpers/RouteName";
 
 function Topbar() {
   return (
@@ -18,7 +19,7 @@ function Topbar() {
       </div>
       <div>
         <Button asChild className="rounded-full">
-          <Link to="">
+          <Link to={RouteSignIn}>
             <MdLogin />
             Sign In
           </Link>
