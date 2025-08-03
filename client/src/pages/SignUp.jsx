@@ -8,13 +8,13 @@ import { useForm } from "react-hook-form"
 import { Card } from '@/components/ui/card'
 import { RouteSignIn } from '@/helpers/RouteName'
 import { Link, useNavigate } from 'react-router-dom'
-// import { getEvn } from '@/helpers/getEnv'
-// import { showToast } from '@/helpers/showToast'
+import { getEvn } from '@/helpers/getEnv'
+import { showToast } from '@/helpers/showToast'
 // import GoogleLogin from '@/components/GoogleLogin'
 
 const SignUp = () => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const formSchema = z.object({
         name: z.string().min(3, 'Name must be at least 3 character long.'),
@@ -34,22 +34,22 @@ const SignUp = () => {
     })
 
     async function onSubmit(values) {
-        // try {
-        //     const response = await fetch(`${getEvn('VITE_API_BASE_URL')}/auth/register`, {
-        //         method: 'post',
-        //         headers: { 'Content-type': 'application/json' },
-        //         body: JSON.stringify(values)
-        //     })
-        //     const data = await response.json()
-        //     if (!response.ok) {
-        //         return showToast('error', data.message)
-        //     }
+        try {
+            const response = await fetch(`${getEvn('VITE_API_BASE_URL')}/auth/register`, {
+                method: 'post',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify(values)
+            })
+            const data = await response.json()
+            if (!response.ok) {
+                return showToast('error', data.message)
+            }
 
-        //     navigate(RouteSignIn)
-        //     showToast('success', data.message)
-        // } catch (error) {
-        //     showToast('error', error.message)
-        // }
+            navigate(RouteSignIn)
+            showToast('success', data.message)
+        } catch (error) {
+            showToast('error', error.message)
+        }
     }
 
     return (
