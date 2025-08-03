@@ -118,22 +118,22 @@ export const GoogleLogin = async (req, res, next) => {
     }
 }
 
-// export const Logout = async (req, res, next) => {
-//     try {
+export const Logout = async (req, res, next) => {
+    try {
 
-//         res.clearCookie('access_token', {
-//             httpOnly: true,
-//             secure: process.env.NODE_ENV === 'production',
-//             sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
-//             path: '/'
-//         })
+        res.clearCookie('access_token', {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
+            path: '/'
+        })
 
-//         res.status(200).json({
-//             success: true,
-//             message: 'Logout successful.'
-//         })
+        res.status(200).json({
+            success: true,
+            message: 'Logout successful.'
+        })
 
-//     } catch (error) {
-//         next(handleError(500, error.message))
-//     }
-// }
+    } catch (error) {
+        next(handleError(500, error.message))
+    }
+}
