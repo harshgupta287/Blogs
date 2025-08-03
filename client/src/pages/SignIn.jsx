@@ -8,8 +8,8 @@ import { useForm } from "react-hook-form"
 import { Card } from '@/components/ui/card'
 import { RouteIndex, RouteSignUp } from '@/helpers/RouteName'
 import { Link, useNavigate } from 'react-router-dom'
-// import { showToast } from '@/helpers/showToast'
-// import { getEvn } from '@/helpers/getEnv'
+import { showToast } from '@/helpers/showToast'
+import { getEvn } from '@/helpers/getEnv'
 // import { useDispatch } from 'react-redux'
 // import { setUser } from '@/redux/user/user.slice'
 // import GoogleLogin from '@/components/GoogleLogin'
@@ -18,7 +18,7 @@ const SignIn = () => {
 
     // const dispath = useDispatch()
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const formSchema = z.object({
         email: z.string().email(),
         password: z.string().min(3, 'Password field  required.')
@@ -34,23 +34,23 @@ const SignIn = () => {
 
 
     async function onSubmit(values) {
-        // try {
-        //     const response = await fetch(`${getEvn('VITE_API_BASE_URL')}/auth/login`, {
-        //         method: 'post',
-        //         headers: { 'Content-type': 'application/json' },
-        //         credentials: 'include',
-        //         body: JSON.stringify(values)
-        //     })
-        //     const data = await response.json()
-        //     if (!response.ok) {
-        //         return showToast('error', data.message)
-        //     }
-        //     dispath(setUser(data.user))
-        //     navigate(RouteIndex)
-        //     showToast('success', data.message)
-        // } catch (error) {
-        //     showToast('error', error.message)
-        // }
+        try {
+            const response = await fetch(`${getEvn('VITE_API_BASE_URL')}/auth/login`, {
+                method: 'post',
+                headers: { 'Content-type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify(values)
+            })
+            const data = await response.json()
+            if (!response.ok) {
+                return showToast('error', data.message)
+            }
+            // dispath(setUser(data.user))
+            navigate(RouteIndex)
+            showToast('success', data.message)
+        } catch (error) {
+            showToast('error', error.message)
+        }
     }
 
     return (
