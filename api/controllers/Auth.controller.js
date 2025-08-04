@@ -39,7 +39,7 @@ export const Login = async (req, res, next) => {
         }
         const hashedPassword = user.password
 
-        const comparePassword = bcryptjs.compare(password, hashedPassword)
+        const comparePassword = await bcryptjs.compare(password, hashedPassword)
         if (!comparePassword) {
             next(handleError(404, 'Invalid login credentials.'))
         }
@@ -68,7 +68,7 @@ export const Login = async (req, res, next) => {
         })
 
     } catch (error) {
-        next(handleError(500, error.message))
+        return next(handleError(500, error.message))
     }
 }
 
