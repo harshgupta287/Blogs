@@ -7,7 +7,7 @@ import AuthRoute from './routes/Auth.route.js'
 import UserRoute from './routes/User.route.js'
 import CategoryRoute from './routes/Category.route.js'
 import BlogRoute from './routes/Blog.route.js'
-// import CommentRouote from './routes/Comment.route.js'
+import CommentRouote from './routes/Comment.route.js'
 // import BlogLikeRoute from './routes/Bloglike.route.js'
 
 dotenv.config()
@@ -28,7 +28,7 @@ app.use('/api/auth', AuthRoute)
 app.use('/api/user', UserRoute)
 app.use('/api/category', CategoryRoute)
 app.use('/api/blog', BlogRoute)
-// app.use('/api/comment', CommentRouote)
+app.use('/api/comment', CommentRouote)
 // app.use('/api/blog-like', BlogLikeRoute)
 
 

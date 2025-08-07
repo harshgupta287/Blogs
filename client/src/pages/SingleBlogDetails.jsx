@@ -1,6 +1,6 @@
-// import Comment from '@/components/Comment'
-// import CommentCount from '@/components/CommentCount'
-// import CommentList from '@/components/CommentList'
+import Comment from '@/components/Comment'
+import CommentCount from '@/components/CommentCount'
+import CommentList from '@/components/CommentList'
 // import LikeCount from '@/components/LikeCount'
 import Loading from '@/components/Loading'
 // import RelatedBlog from '@/components/RelatedBlog'
@@ -40,8 +40,8 @@ const SingleBlogDetails = () => {
                                 </div>
                             </div>
                             <div className='flex justify-between items-center gap-5'>
-                                {/* <LikeCount props={{ blogid: data.blog._id }} />
-                                <CommentCount props={{ blogid: data.blog._id }} /> */}
+                                {/* <LikeCount props={{ blogid: data.blog._id }} /> */}
+                                <CommentCount props={{ blogid: data.blog._id }} />
                             </div>
                         </div>
                         <div className='my-5'>
@@ -52,7 +52,7 @@ const SingleBlogDetails = () => {
                         </div>
 
                         <div className='border-t mt-5 pt-5'>
-                            {/* <Comment props={{ blogid: data.blog._id }} /> */}
+                            <Comment props={{ blogid: data.blog._id }} />
                         </div>
 
 
