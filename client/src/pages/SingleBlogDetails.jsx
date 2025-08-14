@@ -3,7 +3,7 @@ import CommentCount from '@/components/CommentCount'
 import CommentList from '@/components/CommentList'
 import LikeCount from '@/components/LikeCount'
 import Loading from '@/components/Loading'
-// import RelatedBlog from '@/components/RelatedBlog'
+import RelatedBlog from '@/components/RelatedBlog'
 import { Avatar } from '@/components/ui/avatar'
 import { getEvn } from '@/helpers/getEnv'
 import { useFetch } from '@/hooks/useFetch'
@@ -61,7 +61,7 @@ const SingleBlogDetails = () => {
 
             }
             <div className='border rounded md:w-[30%] w-full p-5'>
-                {/* <RelatedBlog props={{ category: category, currentBlog: blog }} /> */}
+                <RelatedBlog props={{ category: category, currentBlog: blog }} />
             </div>
         </div>
     )
