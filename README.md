@@ -32,13 +32,19 @@ A full-featured **MERN Stack Blog Application** where users can:
 ## 📸 Screenshots  
 
 ### 🔐 Authentication Pages  
-![Authentication](./screenshots/auth.png)  
+![Authentication](./screenshots/Auth.jpg)  
 
 ### 📰 Blogs Section  
-![Blogs](./screenshots/blogs.png)  
+![Blogs](./screenshots/Blogs.jpg)  
 
-### ✍️ Post Blog  
-![Post Blog](./screenshots/post.png)  
+### ✍️ Edit Blog  
+![Post Blog](./screenshots/EditBlog.jpg)  
+
+### ✍️ Comments on Blog  
+![Post Blog](./screenshots/Comment.jpg) 
+
+### ✍️ Profile  
+![Post Blog](./screenshots/Profile.jpg) 
 
 
 ---
